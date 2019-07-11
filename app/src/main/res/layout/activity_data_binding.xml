@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="java.util.ArrayList" />
+
+        <variable
+            name="ModelPojo"
+            type="com.integra.myapplication.ModelPojo" />
+
+        <variable
+            name="handlers"
+            type="com.integra.myapplication.DataActivity.MyClickListener" />
+
+        <variable
+            name="user"
+            type="com.integra.myapplication.User" />
+
+        <variable
+            name="event"
+            type="com.integra.myapplication.DataActivity" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".DataActivity">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{ModelPojo.name}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text"
+            android:onClick="@{handlers::btn}"
+            android:text="name " />
+
+
+        <Button
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="@{() -> event.toast1(user)}"
+            android:text="@{user.name + user.list.get(0)}"
+            android:visibility="@{user.age &lt; 30? View.GONE : View.VISIBLE}" />
+
+    </RelativeLayout>
+
+</layout>
+
+
