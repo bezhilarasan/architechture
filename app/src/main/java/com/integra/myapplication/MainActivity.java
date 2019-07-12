@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         modelClass.setI();
     }
 
+    public void myview(View view) {
+        startActivity(new Intent(getApplicationContext(), RecylerViewActivity.class));
+    }
     @Override
     protected void onDestroy() {
         super.onDestroy();

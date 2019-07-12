@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    dataBinding{
+    dataBinding {
         enabled true
     }
     compileSdkVersion 28
@@ -30,11 +30,11 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.0.0"
     implementation "androidx.room:room-runtime:2.1.0"
+        implementation 'com.android.support:recyclerview-v7:28.0.0'
     annotationProcessor "androidx.room:room-compiler:2.1.0"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 
 
 }
